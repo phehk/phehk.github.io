@@ -39,7 +39,10 @@ function addModal (id, title, content) {
 function ajaxGet (url) {
     return $.ajax({
         "url": url,
-        "async": false
+        "async": false,
+	"headers": {
+		Access-Control-Allow-Origin: *
+	}
     }).responseText
 }
 
