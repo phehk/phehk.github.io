@@ -33,8 +33,8 @@ function main () {
 		return `
 			<tr>
 				<td>` + estate[0] + `</td>
-				<td>` + estate[1] + `</td>
-				<td>` + estate[2] + `</td>
+				<td>` + estate[1].toFixed(2).padStart(5, "0") + `</td>
+				<td>` + estate[2].toFixed(2) + `</td>
 				<td>></td>
    			</tr>
   		`
@@ -45,8 +45,8 @@ function main () {
 				<table class="w3-table w3-striped w3-white">
 					<tr>
 						<th>屋邨</th>
-						<th>最小面積</th>
-						<th>最大面積</th>
+						<th>最小</th>
+						<th>最大</th>
 						<th></th>
 					</tr>
 					` + tableHTML + `
