@@ -33,9 +33,9 @@ function main () {
 		return `
 			<tr>
 				<td>` + estate[0] + `</td>
-    				<td>` + estate[1] + `</td>
+				<td>` + estate[1] + `</td>
 				<td>` + estate[2] + `</td>
-    				<td>` + estate[3] + `</td>
+				<td>` + estate[3] + `</td>
 				<td>></td>
    			</tr>
   		`
@@ -49,7 +49,7 @@ function main () {
 						<th>屋邨</th>
 						<th>最小面積</th>
 						<th>最大面積</th>
-      						<th></th>
+						<th></th>
 					</tr>
 					` + tableHTML + `
     				</table>
