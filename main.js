@@ -45,6 +45,7 @@ function ajaxGet (url) {
 		"url": url,
 		"async": false,
 		"headers": {
+			"Access-Control-Allow-Headers": "*",
 			"Access-Control-Allow-Origin": "*"
 		},
 		"xhrFields": {
