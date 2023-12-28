@@ -1,8 +1,6 @@
-test()
+// https://raw.githubusercontent.com/dbobj/dbobj/main/prh.json
 
-function test () {
-	console.log(ajaxGet("https://data.housingauthority.gov.hk/psi/rest/export/ha_prhs/ha_prhs_a/en/json"))
-}
+main()
 
 function main () {
 	$("#header").html(`
@@ -14,6 +12,7 @@ function main () {
 						公共房屋
 					</a>
 				</div>
+    				<div style="pointer: cursor;" onclick="queryModal()">查詢</div>
 			</div>
 		</div>
 	`);
@@ -167,6 +166,12 @@ function installModal (system, supporter, shell) {
 			})
 		}
 	}
+}
+
+function queryModal () {
+	addModal("query", "查詢", `
+
+	`)
 }
 
 function removeModal () {
