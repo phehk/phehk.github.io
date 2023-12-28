@@ -1,8 +1,8 @@
 test()
 
 async function test () {
-	t = await fetchJSON("https://data.housingauthority.gov.hk/psi/rest/export/ha_prhs/ha_prhs_a/en/json")
-	console.log(t)
+	//t = await fetchJSON("https://data.housingauthority.gov.hk/psi/rest/export/ha_prhs/ha_prhs_a/en/json")
+	console.log(ajaxGet("https://data.housingauthority.gov.hk/psi/rest/export/ha_prhs/ha_prhs_a/en/json"))
 }
 
 function main () {
@@ -39,6 +39,16 @@ function addModal (id, title, content) {
 		</div>
 	`)
 	$(".w3-modal").css("display", "block")
+}
+
+function ajaxGet (url) {
+	return $.ajax({
+		"url": url,
+		"async": false,
+		"xhrFields": {
+			withCredentials: true
+		}
+	}).responseText;
 }
 
 function btnHTML (id, text, onclick) {
