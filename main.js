@@ -37,13 +37,14 @@ function addModal (id, title, content) {
 }
 
 function ajaxGet (url) {
-    return $.ajax({
-        "url": url,
-        "async": false,
-	"headers": {
-		"Access-Control-Allow-Origin": "*"
-	}
-    }).responseText
+	return $.ajax({
+		"url": url,
+		"async": false,
+		"crossDomain": true,
+		"headers": {
+			"Access-Control-Allow-Origin": "*"
+		}
+	}).responseText
 }
 
 function btnHTML (id, text, onclick) {
