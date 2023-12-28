@@ -1,4 +1,4 @@
-// https://raw.githubusercontent.com/dbobj/dbobj/main/prh.json
+data = JSON.parse(ajaxGet("https://raw.githubusercontent.com/dbobj/dbobj/main/prh.json"))
 
 main()
 
@@ -11,16 +11,53 @@ function main () {
 						<img src="./images/512x512.png" style="width: 30px; margin-top: auto; margin-bottom: auto; margin-right: 10px;">
 						公共房屋
 					</a>
+					<div style="pointer: cursor; padding: 10px;" onclick="queryModal()">查詢</div>
 				</div>
-    				<div style="pointer: cursor; padding: 10px;" onclick="queryModal()">查詢</div>
 			</div>
 		</div>
-	`);
+	`)
 	browser = getBrowser()
-	installModal(browser.system, browser.supporter, browser.shell) 
-	$("#content").html([
-	
-	].join(""))
+	installModal(browser.system, browser.supporter, browser.shell)
+	table = []
+	for (flat of data) {
+		if (table.length > 0 && table[table.length - 1][0] == flat[0] && table[table.length - 1][1] == flat[1]) {
+			if (flat[4] < table[table.length - 1][2]) {
+				table[table.length - 1][2] = flat[4]
+			}
+			if (flat[4] > table[table.length - 1][3]) {
+				table[table.length - 1][3] = flat[4]
+			}
+		} else {
+			table.push([ flat[0], flat[1], 1000, 0 ])
+		}
+	}
+	tableHTML = table.map(function (estate) {
+		return `
+			<tr>
+				<td>` + estate[0] + `</td>
+    				<td>` + estate[1] + `</td>
+				<td>` + estate[2] + `</td>
+    				<td>` + estate[3] + `</td>
+				<td>></td>
+   			</tr>
+  		`
+	})
+	$("#content").html(`
+ 		<div class="w3-row">
+			<div class="w3-col">
+				<table class="w3-table w3-striped w3-white">
+					<tr>
+						<th>地區</th>
+						<th>屋邨</th>
+						<th>最小面積</th>
+						<th>最大面積</th>
+      						<th></th>
+					</tr>
+					` + tableHTML + `
+    				</table>
+       			</div>
+   		</div>
+	`)
 }
 
 function addModal (id, title, content) {
@@ -50,7 +87,7 @@ function ajaxGet (url) {
 		"xhrFields": {
 			"withCredentials": true
 		}
-	}).responseText;
+	}).responseText
 }
 
 function btnHTML (id, text, onclick) {
