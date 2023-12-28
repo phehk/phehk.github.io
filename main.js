@@ -6,13 +6,11 @@ function main () {
 	$("#header").html(`
 		<div class="w3-top">
 			<div class="w3-bar w3-theme-d2 w3-left-align" style="font-size: 20px; display: flex;">
-				<div>
-					<a href="./" class="w3-bar-item w3-button w3-teal" style="display: flex; padding: 10px;">
-						<img src="./images/512x512.png" style="width: 30px; margin-top: auto; margin-bottom: auto; margin-right: 10px;">
-						公共房屋
-					</a>
-					<div style="pointer: cursor; padding: 10px;" onclick="queryModal()">查詢</div>
-				</div>
+				<a href="./" class="w3-bar-item w3-button w3-teal" style="display: flex; padding: 10px;">
+					<img src="./images/512x512.png" style="width: 30px; margin-top: auto; margin-bottom: auto; margin-right: 10px;">
+					公共房屋
+				</a>
+				<div style="pointer: cursor; padding: 10px;" onclick="queryModal()">查詢</div>
 			</div>
 		</div>
 	`)
