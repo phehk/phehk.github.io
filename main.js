@@ -51,6 +51,7 @@ function center (element) {
 
 async function fetchJSON (url) {
 	response = await fetch(url, { mode: "no-cors" })
+	console.log(response)
 	result = await response.text()
 	return result
 }
