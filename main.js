@@ -1,4 +1,4 @@
-fetch("https://data.housingauthority.gov.hk/psi/rest/export/ha_prhs/ha_prhs_a/en/json").then(function (resp) {
+fetch("https://google.com").then(function (resp) {
 	console.log(resp)
 })
 
