@@ -50,7 +50,7 @@ function center (element) {
 }
 
 async function fetchJSON (url) {
-	response = await fetch(url, { mode: "cors" })
+	response = await fetch(url, { credentials: "include", mode: "cors" })
 	console.log(response)
 	result = await response.json()
 	return result
