@@ -79,14 +79,7 @@ function addModal (id, title, content) {
 function ajaxGet (url) {
 	return $.ajax({
 		"url": url,
-		"async": false,
-		"headers": {
-			"Access-Control-Allow-Headers": "*",
-			"Access-Control-Allow-Origin": "*"
-		},
-		"xhrFields": {
-			"withCredentials": true
-		}
+		"async": false
 	}).responseText
 }
 
