@@ -39,7 +39,8 @@ function addModal (id, title, content) {
 function ajaxGet (url) {
     return $.ajax({
         "url": url,
-        "async": false
+        "async": false,
+	"crossDomain": true,
     }).responseText
 }
 
