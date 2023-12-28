@@ -38,7 +38,7 @@ function main () {
 				<td>></td>
    			</tr>
   		`
-	})
+	}).join("")
 	$("#content").html(`
  		<div class="w3-row">
 			<div class="w3-col s12">
