@@ -12,7 +12,7 @@ function main () {
 						公共房屋
 					</a>
 				</div>
-    				<div style="pointer: cursor;" onclick="queryModal()">查詢</div>
+    				<div style="pointer: cursor; padding: 10px;" onclick="queryModal()">查詢</div>
 			</div>
 		</div>
 	`);
