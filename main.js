@@ -1,7 +1,6 @@
 test()
 
-async function test () {
-	//t = await fetchJSON("https://data.housingauthority.gov.hk/psi/rest/export/ha_prhs/ha_prhs_a/en/json")
+function test () {
 	console.log(ajaxGet("https://data.housingauthority.gov.hk/psi/rest/export/ha_prhs/ha_prhs_a/en/json"))
 }
 
@@ -45,8 +44,11 @@ function ajaxGet (url) {
 	return $.ajax({
 		"url": url,
 		"async": false,
+		"headers": {
+			"Access-Control-Allow-Origin": "*"
+		},
 		"xhrFields": {
-			withCredentials: true
+			"withCredentials": true
 		}
 	}).responseText;
 }
