@@ -1,4 +1,9 @@
-console.log(ajaxGet("https://google.com"))
+test()
+
+async function test () {
+	t = await fetchJSON("https://data.housingauthority.gov.hk/dataset/emms/ha_prhs_a_en.json")
+	console.log(t)
+}
 
 function main () {
 	$("#header").html(`
@@ -36,23 +41,17 @@ function addModal (id, title, content) {
 	$(".w3-modal").css("display", "block")
 }
 
-function ajaxGet (url) {
-	return $.ajax({
-		"url": url,
-		"async": false,
-		"crossDomain": true,
-		"headers": {
-			"Access-Control-Allow-Origin": "*"
-		}
-	}).responseText
-}
-
 function btnHTML (id, text, onclick) {
 	return "<button onclick='" + onclick + "' class='w3-button w3-theme' id='" + id + "'>" + text + "</button>"
 }
 
 function center (element) {
 	return "<div class='w3-center'>" + element + "</div>"
+}
+
+async function fetchJSON (url) {
+	resp = await fetch(url)
+	return resp
 }
 
 function formHTML (label, ...elements) {
