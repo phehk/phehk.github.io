@@ -16,26 +16,25 @@ function main () {
 	`)
 	browser = getBrowser()
 	installModal(browser.system, browser.supporter, browser.shell)
-	table = []
+	tableArr = []
 	for (flat of data) {
-		if (table.length > 0 && table[table.length - 1][0] == flat[0] && table[table.length - 1][1] == flat[1]) {
-			if (flat[4] < table[table.length - 1][2]) {
-				table[table.length - 1][2] = flat[4]
+		if (tableArr.length > 0 && tableArr[tableArr.length - 1][0] == flat[0]) {
+			if (flat[3] < tableArr[tableArr.length - 1][1]) {
+				tableArr[tableArr.length - 1][1] = flat[3]
 			}
-			if (flat[4] > table[table.length - 1][3]) {
-				table[table.length - 1][3] = flat[4]
+			if (flat[3] > tableArr[tableArr.length - 1][2]) {
+				tableArr[tableArr.length - 1][2] = flat[3]
 			}
 		} else {
-			table.push([ flat[0], flat[1], 1000, 0 ])
+			tableArr.push([ flat[0], 1000, 0 ])
 		}
 	}
-	tableHTML = table.map(function (estate) {
+	tableHTML = tableArr.map(function (estate) {
 		return `
 			<tr>
 				<td>` + estate[0] + `</td>
 				<td>` + estate[1] + `</td>
 				<td>` + estate[2] + `</td>
-				<td>` + estate[3] + `</td>
 				<td>></td>
    			</tr>
   		`
@@ -45,7 +44,6 @@ function main () {
 			<div class="w3-col s12">
 				<table class="w3-table w3-striped w3-white">
 					<tr>
-						<th>地區</th>
 						<th>屋邨</th>
 						<th>最小面積</th>
 						<th>最大面積</th>
