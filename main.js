@@ -1,7 +1,7 @@
 test()
 
 async function test () {
-	t = await fetchJSON("https://data.housingauthority.gov.hk/dataset/emms/ha_prhs_a_en.json")
+	t = await fetchJSON("https://data.housingauthority.gov.hk/psi/rest/export/ha_prhs/ha_prhs_a/en/json")
 	console.log(t)
 }
 
