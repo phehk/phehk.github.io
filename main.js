@@ -1,4 +1,4 @@
-main()
+console.log(ajaxGet("https://data.housingauthority.gov.hk/dataset/emms/ha_prhs_a_en.json"))
 
 function main () {
 	$("#header").html(`
