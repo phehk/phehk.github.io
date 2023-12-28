@@ -1,4 +1,4 @@
-console.log(ajaxGet("https://data.housingauthority.gov.hk/dataset/emms/ha_prhs_a_en.json"))
+console.log(ajaxGet("https://data.housingauthority.gov.hk/psi/rest/export/ha_prhs/ha_prhs_a/en/json"))
 
 function main () {
 	$("#header").html(`
