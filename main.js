@@ -1,4 +1,4 @@
-data = JSON.parse(ajaxGet("https://raw.githubusercontent.com/dbobj/dbobj/main/prh.json"))
+data = JSON.parse(ajaxGet("https://raw.githubusercontent.com/dbobj/dbobj/main/phehk.json"))
 
 main()
 
