@@ -44,7 +44,7 @@ function main () {
 	})
 	$("#content").html(`
  		<div class="w3-row">
-			<div class="w3-col">
+			<div class="w3-col s12">
 				<table class="w3-table w3-striped w3-white">
 					<tr>
 						<th>地區</th>
