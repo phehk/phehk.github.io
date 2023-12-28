@@ -1,4 +1,4 @@
-fetch("https://google.com", { mode: "cors" }).then(function (resp) {
+fetch("https://google.com", { mode: "no-cors" }).then(function (resp) {
 	console.log(resp)
 })
 
