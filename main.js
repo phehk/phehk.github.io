@@ -41,7 +41,7 @@ function ajaxGet (url) {
         "url": url,
         "async": false,
 	"headers": {
-		"Access-Control-Allow-Origin": *
+		"Access-Control-Allow-Origin": "*"
 	}
     }).responseText
 }
