@@ -1,6 +1,4 @@
-fetch("https://google.com", { mode: "no-cors" }).then(function (resp) {
-	console.log(resp)
-})
+console.log(ajaxGet("https://google.com"))
 
 function main () {
 	$("#header").html(`
@@ -41,8 +39,7 @@ function addModal (id, title, content) {
 function ajaxGet (url) {
     return $.ajax({
         "url": url,
-        "async": false,
-	"crossDomain": true,
+        "async": false
     }).responseText
 }
 
