@@ -33,7 +33,7 @@ function main () {
 		return `
 			<tr>
 				<td>` + estate[0] + `</td>
-				<td>` + estate[1].toFixed(2).padStart(5, "0") + `</td>
+				<td style="width: 62.52px; text-align: right;">` + estate[1].toFixed(2) + `</td>
 				<td>` + estate[2].toFixed(2) + `</td>
 				<td>></td>
    			</tr>
